@@ -13,7 +13,7 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { EaselPlugin } from "gsap/EaselPlugin";
 import { PixiPlugin } from "gsap/PixiPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
-
+import "./styles/mode.scss";
 
 gsap.registerPlugin(
   useGSAP,

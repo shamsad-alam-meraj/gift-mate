@@ -1,8 +1,11 @@
+import ThemeToggle from "@/components/shared-components/ThemeToggle";
+
 const HomePage = () => {
   return (
-    <h1 className="font-bold text-5xl text-center pt-20">
-      Welcome to Gift Mate!
-    </h1>
+    <div>
+      <h1>Welcome to the Gift Mate App!</h1>
+      <ThemeToggle />
+    </div>
   );
 };
 
