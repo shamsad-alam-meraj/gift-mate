@@ -1,4 +1,5 @@
 import AppRoutes from "./routes";
+import "./styles/index.scss";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { CustomEase } from "gsap/CustomEase";
@@ -12,6 +13,7 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { EaselPlugin } from "gsap/EaselPlugin";
 import { PixiPlugin } from "gsap/PixiPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
+
 
 gsap.registerPlugin(
   useGSAP,

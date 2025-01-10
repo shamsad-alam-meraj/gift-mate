@@ -1,0 +1,19 @@
+@import "./variables";
+@import "./mixins";
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  color: white;
+
+  .container {
+    @include flex-center;
+    height: 100vh;
+    text-align: center;
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+  }
+}
