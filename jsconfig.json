@@ -1,0 +1,10 @@
+{
+  "exclude": ["node_modules", "dist"],
+  "references": [],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
