@@ -1,9 +1,9 @@
 @import "./variables";
 @import "./mixins";
-@import "./styles.scss";
+@import url("https://fonts.googleapis.com/css2?family=Delius&display=swap");
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Delius", serif;
   .container {
     padding-left: 20px;
     padding-right: 20px;
