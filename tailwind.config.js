@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -55,6 +56,9 @@ export default {
           4: "hsl(var(--chart-4))",
           5: "hsl(var(--chart-5))",
         },
+        // Adding custom colors
+        primary: "#3498db",
+        secondary: "#d1e6f4c9",
       },
     },
   },
