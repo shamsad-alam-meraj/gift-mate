@@ -14,6 +14,7 @@ import { EaselPlugin } from "gsap/EaselPlugin";
 import { PixiPlugin } from "gsap/PixiPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
 import "./styles/mode.scss";
+import AnimatedCursor from "react-animated-cursor";
 
 gsap.registerPlugin(
   useGSAP,
@@ -33,7 +34,26 @@ gsap.registerPlugin(
 );
 
 function App() {
-  return <AppRoutes />;
+  return (
+    <>
+      {" "}
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={35}
+        innerScale={1}
+        outerScale={2}
+        outerAlpha={0}
+        hasBlendMode={true}
+        innerStyle={{
+          backgroundColor: "#FFFF00",
+        }}
+        outerStyle={{
+          border: "2px solid #3498db",
+        }}
+      />
+      <AppRoutes />
+    </>
+  );
 }
 
 export default App;
