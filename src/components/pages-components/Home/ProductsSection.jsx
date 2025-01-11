@@ -23,7 +23,9 @@ export default function ProductsSection() {
   }, []);
   return (
     <div className="pt-10 container">
-      <h1 className="text-2xl font-semibold text-center pb-5">Our Products</h1>
+      <h1 className="text-2xl font-semibold text-center pb-5 text-primary">
+        Our Products
+      </h1>
       {/* products map  */}
       {loading ? (
         <div className="h-[300px]">
