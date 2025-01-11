@@ -58,7 +58,7 @@ export default {
         },
         // Adding custom colors
         primary: "#3498db",
-        secondary: "#040273",
+        secondary: "#FFFF00",
       },
     },
   },
