@@ -23,8 +23,13 @@ export default function Banner() {
         <h1 className="text-3xl sm:text-4xl font-semibold pb-2 italic">
           Gift Mate
         </h1>
-        <p className="text-lg sm:text-xl text-gray-500 pb-4">
+        <p className="text-lg sm:text-xl text-gray-500 pb-4 dark:text-gray-50">
           Thoughtful Gifts for Every Celebration
+        </p>
+        <p className="pb-2 dark:text-gray-100 text-gray-400 font-light">
+          A smart and intuitive platform for thoughtful and hassle-free gifting,
+          offering personalized recommendations, seamless shopping, and
+          event-based gift solutions.
         </p>
         <Button className="px-6 py-3 bg-primary text-white rounded-md hover:bg-primary-light">
           Get Started

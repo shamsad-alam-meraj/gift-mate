@@ -1,0 +1,14 @@
+.squares {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Increase number of columns */
+  gap: 2px; /* Reduce the space between squares */
+  width: 50px; /* Decrease the container width */
+  height: 50px; /* Decrease the container height */
+}
+
+.square {
+  background-color: #3498db;
+  width: 100%;
+  padding-top: 100%; /* Keeps the square shape */
+  position: relative;
+}

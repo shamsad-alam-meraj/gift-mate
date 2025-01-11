@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useTheme } from "@/hooks/ThemeContext";
 import { gsap } from "gsap";
-import { FiSun, FiMoon } from "react-icons/fi"; // Import icons
+import { FiSun, FiMoon } from "react-icons/fi"; 
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
