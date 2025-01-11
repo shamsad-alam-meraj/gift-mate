@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,6 +34,9 @@ const Navbar = () => {
             <Link to="/contact" className="hover:text-gray-300">
               Contact
             </Link>
+          </div>
+          <div>
+            <ThemeToggle></ThemeToggle>
           </div>
 
           {/* Mobile Menu Button */}
