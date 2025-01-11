@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import BlockLoader from "@/components/shared-components/BlockLoader";
 import ProductCard from "@/components/shared-components/ProductCard";
 import { Button } from "@/components/ui/button";
