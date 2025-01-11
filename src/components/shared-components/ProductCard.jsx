@@ -41,7 +41,7 @@ export default function ProductCard({ product }) {
         />
       </div>
       <h2 className="mt-2 font-semibold">{product.title}</h2>
-      <p>
+      <p className="font-semibold text-yellow-400">
         {product?.pricing_currency?.native_symbol} {product.price}
       </p>
       <p>{truncatedDescription}</p>
