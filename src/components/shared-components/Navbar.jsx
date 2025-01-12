@@ -2,6 +2,9 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import ThemeToggle from "./ThemeToggle";
+import { FiMenu } from "react-icons/fi";
+import { MdOutlineClose } from "react-icons/md";
+import { BsCart2 } from "react-icons/bs";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +49,7 @@ const Navbar = () => {
             <Link to="/" className="text-2xl font-bold">
               {/* <img className="h-10" src="/assets/images/full_logo.png" alt="" /> */}
               <span className="text-yellow-400">gift</span>
-            <span className="text-primary">mate</span>
+              <span className="text-primary">mate</span>
             </Link>
           </div>
 
@@ -58,15 +61,27 @@ const Navbar = () => {
             <Link to="/products" className="hover:text-primary font-bold">
               Products
             </Link>
-            <Link to="/services" className="hover:text-primary font-bold">
-              Services
+            <Link to="/chat-bot" className="hover:text-primary font-bold">
+              Chatbot
             </Link>
             <Link to="/about-us" className="hover:text-primary font-bold">
               About Us
             </Link>
           </div>
-          <div>
+          <div className="flex items-center">
             <ThemeToggle></ThemeToggle>
+            <Link
+              to="/cart-items"
+              className="pb-1 hidden md:inline-block hover:text-primary font-bold ml-4"
+            >
+              <BsCart2 />
+            </Link>
+            <Link
+              to="/log-in"
+              className="pb-1 hidden md:inline-block hover:text-primary font-bold ml-4"
+            >
+              Log In
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -83,19 +98,9 @@ const Navbar = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <MdOutlineClose color="#ffbf00" size={24} />
                 ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  <FiMenu color="#3498db" size={24} />
                 )}
               </svg>
             </button>
@@ -142,6 +147,21 @@ const Navbar = () => {
           >
             About Us
           </Link>
+          <div className="flex justify-between items-center">
+            <Link
+              to="/log-in"
+              className="block text-white hover:bg-gray-600 rounded px-3 py-2"
+              onClick={() => setIsOpen(false)}
+            >
+              Log In
+            </Link>
+            <Link
+              to="/cart-items"
+              className="block text-white hover:bg-gray-600 rounded px-3 py-2"
+            >
+              <BsCart2 />
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
