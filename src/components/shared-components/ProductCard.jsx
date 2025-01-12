@@ -3,6 +3,8 @@ import gsap from "gsap";
 import { BsCartPlus } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/reducers/cartSlice";
+import { Link } from "react-router-dom";
+import { MdOutlineShoppingBag } from "react-icons/md";
 
 /* eslint-disable react/prop-types */
 export default function ProductCard({ product }) {
@@ -27,8 +29,8 @@ export default function ProductCard({ product }) {
 
   // Truncate description to at most 10 characters with "..."
   const truncatedDescription =
-    product.description?.length > 30
-      ? `${product.description.slice(0, 30)}...`
+    product.description?.length > 40
+      ? `${product.description.slice(0, 40)}`
       : product.description;
 
   return (
@@ -41,14 +43,22 @@ export default function ProductCard({ product }) {
         <img
           className="h-[100px] w-[100px]"
           src="/assets/images/iphone.png"
-          alt={product.name}
+          alt={product.title}
         />
       </div>
       <h2 className="mt-2 font-semibold">{product.title}</h2>
       <p className="font-semibold text-yellow-400">
         {product?.pricing_currency?.native_symbol} {product.price}
       </p>
-      <p>{truncatedDescription}</p>
+      <p className="text-sm">
+        {truncatedDescription}
+        <Link
+          to={`/product-details/${product.id}`}
+          className="text-primary py-1 px-2 rounded"
+        >
+          see more...
+        </Link>
+      </p>
       <div className="flex justify-between items-center pt-3">
         <button
           onClick={() => dispatch(addToCart(product))}
@@ -56,7 +66,12 @@ export default function ProductCard({ product }) {
         >
           <BsCartPlus />
         </button>
-        <button className="text-primary py-1 px-2 rounded">Go Details</button>
+        <button
+          // onClick={() => dispatch(addToCart(product))}
+          className="bg-yellow-400 text-white font-bold py-1 flex items-center px-2 rounded"
+        >
+         <span className="mr-2 text-md">Buy Now</span> <MdOutlineShoppingBag />
+        </button>
       </div>
     </div>
   );
