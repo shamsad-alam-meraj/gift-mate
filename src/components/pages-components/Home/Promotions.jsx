@@ -6,19 +6,19 @@ const Promotions = () => {
   const slides = [
     {
       id: 1,
-      image: "/images/slide1.jpg",
+      image: "/assets/images/electronics.jpeg",
       title: "Big Sale!",
       description: "Up to 50% off on electronics.",
     },
     {
       id: 2,
-      image: "/images/slide2.jpg",
+      image: "/assets/images/electronics.jpeg",
       title: "New Arrivals",
       description: "Discover the latest trends.",
     },
     {
       id: 3,
-      image: "/images/slide3.jpg",
+      image: "/assets/images/electronics.jpeg",
       title: "Limited Time Offer",
       description: "Hurry, offer ends soon!",
     },
