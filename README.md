@@ -40,7 +40,7 @@ Gift Mate is a smart and intuitive platform designed to revolutionize how people
 - **Database:** MongoDB for storing user data, gift preferences, and occasion details.  
 - **Third-Party APIs:** Payment gateways (e.g., Stripe, PayPal), retailer APIs for gift integration.  
   
-## Technologies Used in Frontend Development
+## Technologies Used
 
 This project utilizes the following technologies:
 
@@ -65,7 +65,7 @@ This project utilizes the following technologies:
 - **Prettier**: For code formatting consistency.
 - **Git**: Version control for tracking changes and collaboration.
 
-This combination of tools and technologies enables a modern, responsive, and dynamic user experience. Feel free to expand this section as your project evolves!
+This combination of tools and technologies enables a modern, responsive, and dynamic user experience.
 
 
 ## Objective  
