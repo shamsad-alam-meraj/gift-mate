@@ -39,6 +39,34 @@ Gift Mate is a smart and intuitive platform designed to revolutionize how people
 - **Backend:** Node.js with Express for API services.  
 - **Database:** MongoDB for storing user data, gift preferences, and occasion details.  
 - **Third-Party APIs:** Payment gateways (e.g., Stripe, PayPal), retailer APIs for gift integration.  
+  
+## Technologies Used in Frontend Development
+
+This project utilizes the following technologies:
+
+- **React**: JavaScript library for building user interfaces.
+- **React Hooks**: Used for managing state and side effects (`useState`, `useEffect`).
+- **Context API**: For managing global state and prop drilling solutions.
+- **Redux**: State management library for handling application-wide state.
+- **GSAP (GreenSock Animation Platform)**: For creating smooth and complex animations.
+- **shadcn/ui**: Pre-built, customizable components for React projects.
+- **JavaScript (ES6)**: Core language features like arrow functions, destructuring, and template literals.
+- **SCSS (Sass)**: Preprocessor for writing CSS with advanced features like variables, nesting, and mixins.
+- **Tailwind CSS**: Utility-first CSS framework for styling components.
+- **React Components**: Modular and reusable component-based architecture.
+- **Data Handling**: Static product data for filtering and rendering.
+- **Responsive Design**: Ensures a seamless experience across various screen sizes using Tailwind's responsive utilities.
+- **HTML5**: Semantic markup for structuring the application.
+- **CSS3**: Used alongside Tailwind and SCSS for minor custom styles.
+- **Vite**: Lightning-fast development environment for React applications.
+
+### Additional Tools
+- **ESLint**: For code linting and maintaining coding standards.
+- **Prettier**: For code formatting consistency.
+- **Git**: Version control for tracking changes and collaboration.
+
+This combination of tools and technologies enables a modern, responsive, and dynamic user experience. Feel free to expand this section as your project evolves!
+
 
 ## Objective  
 To create a hassle-free gifting platform that ensures every gift is thoughtful, appropriate, and memorable. By leveraging technology and data, Gift Mate aims to save time, reduce stress, and bring joy to both the giver and the recipient.  
