@@ -1,45 +1,56 @@
-# Gift Mate  
-**Tagline:** *Thoughtful Gifts for Every Celebration*  
+# <span style="color: #FFFF00;">gift</span><span style="color: #1e90ff;">mate</span>
 
-## Overview  
-Gift Mate is a smart and intuitive platform designed to revolutionize how people select and send gifts. With a focus on personalization and ease of use, Gift Mate helps users discover the perfect gifts tailored to specific occasions or invitations. Whether it's a birthday, wedding, anniversary, baby shower, or corporate event, Gift Mate ensures every gift is meaningful and leaves a lasting impression.  
+**Tagline:** _Thoughtful Gifts for Every Celebration_
 
-## Key Features  
-1. **Occasion-Based Gift Suggestions**  
-   - Suggests gift ideas based on the type of event, such as weddings, birthdays, or holidays.  
-   - Personalized recommendations by analyzing preferences, relationships, and trends.  
+## Overview
 
-2. **Invitation Integration**  
-   - Upload or sync event invitations for tailored gift suggestions based on the event’s theme or recipient's preferences.  
+Gift Mate is a smart and intuitive platform designed to revolutionize how people select and send gifts. With a focus on personalization and ease of use, Gift Mate helps users discover the perfect gifts tailored to specific occasions or invitations. Whether it's a birthday, wedding, anniversary, baby shower, or corporate event, Gift Mate ensures every gift is meaningful and leaves a lasting impression.
 
-3. **Smart Filters**  
-   - Filter gifts by budget, category, age, relationship, or interests.  
+## Key Features
 
-4. **Gift Scheduler**  
-   - Schedule gifts to be sent on specific dates with reminders for upcoming events.  
+1. **Occasion-Based Gift Suggestions**
 
-5. **Gift Registry Integration**  
-   - Sync with gift registries for occasions like weddings or baby showers to avoid duplicate gifting.  
+   - Suggests gift ideas based on the type of event, such as weddings, birthdays, or holidays.
+   - Personalized recommendations by analyzing preferences, relationships, and trends.
 
-6. **Seamless Shopping Experience**  
-   - Direct links to purchase or send gifts from trusted retailers.  
-   - Secure payment options with order tracking.  
+2. **Invitation Integration**
 
-7. **Personalized Messaging**  
-   - Add custom messages, greetings, and even virtual cards with every gift.  
+   - Upload or sync event invitations for tailored gift suggestions based on the event’s theme or recipient's preferences.
 
-## Target Audience  
-- Busy professionals seeking quick and thoughtful gifting solutions.  
-- Individuals looking for unique, occasion-specific gifts.  
-- Event attendees who want to make their gift stand out.  
+3. **Smart Filters**
 
-## Technology Stack  
-- **Frontend:** ReactJS (Web), React Native (Mobile).  
-- **Styling:** SCSS/Tailwind CSS for responsive and attractive design.  
-- **Backend:** Node.js with Express for API services.  
-- **Database:** MongoDB for storing user data, gift preferences, and occasion details.  
-- **Third-Party APIs:** Payment gateways (e.g., Stripe, PayPal), retailer APIs for gift integration.  
-  
+   - Filter gifts by budget, category, age, relationship, or interests.
+
+4. **Gift Scheduler**
+
+   - Schedule gifts to be sent on specific dates with reminders for upcoming events.
+
+5. **Gift Registry Integration**
+
+   - Sync with gift registries for occasions like weddings or baby showers to avoid duplicate gifting.
+
+6. **Seamless Shopping Experience**
+
+   - Direct links to purchase or send gifts from trusted retailers.
+   - Secure payment options with order tracking.
+
+7. **Personalized Messaging**
+   - Add custom messages, greetings, and even virtual cards with every gift.
+
+## Target Audience
+
+- Busy professionals seeking quick and thoughtful gifting solutions.
+- Individuals looking for unique, occasion-specific gifts.
+- Event attendees who want to make their gift stand out.
+
+## Technology Stack
+
+- **Frontend:** ReactJS (Web), React Native (Mobile).
+- **Styling:** SCSS/Tailwind CSS for responsive and attractive design.
+- **Backend:** Node.js with Express for API services.
+- **Database:** MongoDB for storing user data, gift preferences, and occasion details.
+- **Third-Party APIs:** Payment gateways (e.g., Stripe, PayPal), retailer APIs for gift integration.
+
 ## Technologies Used
 
 This project utilizes the following technologies:
@@ -61,19 +72,21 @@ This project utilizes the following technologies:
 - **Vite**: Lightning-fast development environment for React applications.
 
 ### Additional Tools
+
 - **ESLint**: For code linting and maintaining coding standards.
 - **Prettier**: For code formatting consistency.
 - **Git**: Version control for tracking changes and collaboration.
 
 This combination of tools and technologies enables a modern, responsive, and dynamic user experience.
 
+## Objective
 
-## Objective  
-To create a hassle-free gifting platform that ensures every gift is thoughtful, appropriate, and memorable. By leveraging technology and data, Gift Mate aims to save time, reduce stress, and bring joy to both the giver and the recipient.  
+To create a hassle-free gifting platform that ensures every gift is thoughtful, appropriate, and memorable. By leveraging technology and data, Gift Mate aims to save time, reduce stress, and bring joy to both the giver and the recipient.
 
-## Future Vision  
-- AI-powered gift recommendations based on sentiment analysis of event details or conversations.  
-- Global expansion to include diverse cultural and regional gift options.  
-- Subscription plans for frequent users with perks like exclusive deals, faster delivery, and premium packaging.  
+## Future Vision
+
+- AI-powered gift recommendations based on sentiment analysis of event details or conversations.
+- Global expansion to include diverse cultural and regional gift options.
+- Subscription plans for frequent users with perks like exclusive deals, faster delivery, and premium packaging.
 
 Gift Mate is not just a gifting app; it’s your trusted companion for making every occasion special.
