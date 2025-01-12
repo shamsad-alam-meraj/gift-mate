@@ -3,10 +3,12 @@ import ProductCard from "@/components/shared-components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Products } from "@/data/Products";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductsSection() {
   const [loading, setLoading] = useState(true);
   const [displayedProducts, setDisplayedProducts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Simulate API request delay
@@ -41,7 +43,10 @@ export default function ProductsSection() {
       {/* see more button to navigate on products page  */}
       {!loading ? (
         <div className="flex justify-center mt-5">
-          <Button className="px-2 py-2 bg-primary text-white rounded-md hover:bg-primary-light">
+          <Button
+            onClick={() => navigate("/products")}
+            className="px-2 py-2 bg-primary text-white rounded-md hover:bg-primary-light"
+          >
             See More
           </Button>
         </div>
