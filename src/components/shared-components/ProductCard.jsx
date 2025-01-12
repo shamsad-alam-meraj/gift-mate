@@ -1,10 +1,13 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { BsCartPlus } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/redux/reducers/cartSlice";
 
 /* eslint-disable react/prop-types */
 export default function ProductCard({ product }) {
   const cardRef = useRef(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // GSAP animation to smoothly open the card
@@ -23,9 +26,10 @@ export default function ProductCard({ product }) {
   }, []);
 
   // Truncate description to at most 10 characters with "..."
-  const truncatedDescription = product.description?.length > 30 
-    ? `${product.description.slice(0, 30)}...`
-    : product.description;
+  const truncatedDescription =
+    product.description?.length > 30
+      ? `${product.description.slice(0, 30)}...`
+      : product.description;
 
   return (
     <div
@@ -46,12 +50,13 @@ export default function ProductCard({ product }) {
       </p>
       <p>{truncatedDescription}</p>
       <div className="flex justify-between items-center pt-3">
-        <button className="bg-primary text-white font-bold py-2 px-2 rounded">
+        <button
+          onClick={() => dispatch(addToCart(product))}
+          className="bg-primary text-white font-bold py-2 px-2 rounded"
+        >
           <BsCartPlus />
         </button>
-        <button className="text-primary py-1 px-2 rounded">
-          Go Details
-        </button>
+        <button className="text-primary py-1 px-2 rounded">Go Details</button>
       </div>
     </div>
   );
