@@ -11,7 +11,10 @@ export default function Footer() {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Company Info */}
         <div className="space-y-4">
-          <h3 className="text-xl font-semibold">Gift Mate</h3>
+          <h3 className="text-xl font-semibold">
+            <span className="text-yellow-400">gift</span>
+            <span className="text-primary">mate</span>
+          </h3>
           <p className="text-sm text-gray-400">
             Thoughtful Gifts for Every Celebration. We make gifting easy and
             meaningful.

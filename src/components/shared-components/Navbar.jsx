@@ -44,7 +44,9 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="text-2xl font-bold">
-              <img className="h-10" src="/assets/images/full_logo.png" alt="" />
+              {/* <img className="h-10" src="/assets/images/full_logo.png" alt="" /> */}
+              <span className="text-yellow-400">gift</span>
+            <span className="text-primary">mate</span>
             </Link>
           </div>
 
