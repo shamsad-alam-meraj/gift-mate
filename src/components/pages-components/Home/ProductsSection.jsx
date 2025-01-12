@@ -1,14 +1,14 @@
 import BlockLoader from "@/components/shared-components/BlockLoader";
 import ProductCard from "@/components/shared-components/ProductCard";
-import { Button } from "@/components/ui/button";
+import SectionHeader from "@/components/shared-components/SectionHeader";
 import { Products } from "@/data/Products";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function ProductsSection() {
   const [loading, setLoading] = useState(true);
   const [displayedProducts, setDisplayedProducts] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     // Simulate API request delay
@@ -24,9 +24,17 @@ export default function ProductsSection() {
   }, []);
   return (
     <div className="pt-10 container">
-      <h1 className="text-2xl font-semibold text-center pb-5 text-primary">
-        Our Products
-      </h1>
+      <div className="flex w-full justify-between items-center py-3">
+        <SectionHeader title="Gift Items" />
+        {/* see more button to navigate on products page  */}
+        {!loading ? (
+          <Link className="text-primary flex items-center" to="/products">
+            <span className="mr-2">See more</span> <FaArrowRight />
+          </Link>
+        ) : (
+          ""
+        )}
+      </div>
       {/* products map  */}
       {loading ? (
         <div className="h-[300px]">
@@ -38,20 +46,6 @@ export default function ProductsSection() {
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
-      )}
-
-      {/* see more button to navigate on products page  */}
-      {!loading ? (
-        <div className="flex justify-center mt-5">
-          <Button
-            onClick={() => navigate("/products")}
-            className="px-2 py-2 bg-primary text-white rounded-md hover:bg-primary-light"
-          >
-            See More
-          </Button>
-        </div>
-      ) : (
-        ""
       )}
     </div>
   );

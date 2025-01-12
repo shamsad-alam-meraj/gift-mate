@@ -1,3 +1,4 @@
+import SectionHeader from "@/components/shared-components/SectionHeader";
 import {
   Accordion,
   AccordionItem,
@@ -8,9 +9,8 @@ import {
 const FAQSection = () => {
   return (
     <div className="mt-10 px-4">
-      <h2 className="text-3xl font-bold text-center mb-6">
-        Frequently Asked Questions
-      </h2>
+      <SectionHeader title="Frequently Asked Questions" />
+
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>What is your return policy?</AccordionTrigger>

@@ -1,3 +1,5 @@
+import SectionHeader from "@/components/shared-components/SectionHeader";
+
 const HotDealsSection = () => {
     const hotDeals = [
       { id: 1, image: "/images/deal1.jpg", title: "Smartphone", price: "$499" },
@@ -7,8 +9,8 @@ const HotDealsSection = () => {
   
     return (
       <div className="mt-10 px-4">
-        <h2 className="text-3xl font-bold text-center mb-6">Hot Deals</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+       <SectionHeader title="Hot Deals" />
+        <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {hotDeals.map((deal) => (
             <div key={deal.id} className="border rounded-lg p-4 shadow-lg">
               <img src={deal.image} alt={deal.title} className="w-full h-40 object-cover rounded" />
