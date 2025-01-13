@@ -1,3 +1,4 @@
+import { clearCartHelper } from "@/helpers/helpers";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -35,6 +36,7 @@ const cartSlice = createSlice({
     },
     clearCart: (state) => {
       state.items = [];
+      clearCartHelper();
     },
   },
 });
