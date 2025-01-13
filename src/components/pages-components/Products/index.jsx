@@ -1,19 +1,14 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
-
-import { Products } from "@/data/Products";
 import ProductCard from "@/components/shared-components/ProductCard";
+import BlockLoader from "@/components/shared-components/BlockLoader";
 
-export default function ProductsPage() {
+export default function ProductsPage({ products, loading }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const products = Products;
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value.toLowerCase());
   };
-
-  const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(searchQuery)
-  );
 
   return (
     <div className="container mx-auto py-8">
@@ -151,17 +146,23 @@ export default function ProductsPage() {
         </aside>
 
         {/* Products Grid */}
-        <main className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredProducts.length > 0 ? (
-            filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))
-          ) : (
-            <p className="col-span-full text-center text-gray-500">
-              No products found.
-            </p>
-          )}
-        </main>
+        {loading ? (
+          <div className="min-h-screen w-full">
+            <BlockLoader />
+          </div>
+        ) : (
+          <main className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {products.length > 0 ? (
+              products?.map((product) => (
+                <ProductCard key={product?._id} product={product} />
+              ))
+            ) : (
+              <p className="col-span-full text-center text-gray-500">
+                No products found.
+              </p>
+            )}
+          </main>
+        )}
       </div>
     </div>
   );
