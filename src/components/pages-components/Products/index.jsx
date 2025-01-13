@@ -25,9 +25,9 @@ export default function ProductsPage({ products, loading }) {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col md:flex-row gap-6 ">
         {/* Sidebar */}
-        <aside className="w-full md:w-1/4 p-4 rounded-lg shadow-sm shadow-yellow-50">
+        <aside className="w-full md:w-1/4 p-4 rounded-lg shadow-sm shadow-yellow-50 h-screen fixed left-0">
           <h2 className="text-lg font-semibold pb-4">Filter Gifts</h2>
           <div className="space-y-6">
             {/* Budget Filter */}
