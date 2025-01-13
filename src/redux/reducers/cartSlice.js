@@ -1,5 +1,9 @@
-import { clearCartHelper } from "@/helpers/helpers";
 import { createSlice } from "@reduxjs/toolkit";
+import {
+  addToCartHelper,
+  removeFromCartHelper,
+  clearCartHelper,
+} from "@/helpers/helpers";
 
 const initialState = {
   items: JSON.parse(localStorage.getItem("cartItems")) || [],
@@ -10,44 +14,20 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      const existingItem = state.items.find(
-        (item) => item._id === action.payload._id
-      );
-      if (existingItem) {
-        // Update the quantity if the item already exists
-        existingItem.quantity += action.payload.quantity || 1;
-        addToCart(...state.items, existingItem);
-      } else {
-        // Add the new item
-        state.items.push({ ...action.payload, quantity: 1 });
-        addToCart(...state.items, action.payload);
-      }
+      state.items = addToCartHelper(state.items, action.payload);
     },
     removeFromCart: (state, action) => {
-      // Remove item if quantity is <= 1; otherwise decrement the quantity
-      const itemIndex = state.items.findIndex(
-        (item) => item._id === action.payload._id
+      state.items = removeFromCartHelper(
+        state.items,
+        action.payload._id,
+        action.payload.fullRemove || false
       );
-      if (itemIndex !== -1) {
-        if (state.items[itemIndex].quantity > 1) {
-          state.items[itemIndex].quantity -= 1;
-          removeFromCart(
-            ...state.items,
-            (state.items[itemIndex].quantity -= 1)
-          );
-        } else {
-          state.items.splice(itemIndex, 1);
-          removeFromCart(...state.items, state.items.splice(itemIndex, 1));
-        }
-      }
     },
     clearCart: (state) => {
-      state.items = [];
-      clearCartHelper();
+      state.items = clearCartHelper();
     },
   },
 });
 
 export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
-
 export default cartSlice.reducer;

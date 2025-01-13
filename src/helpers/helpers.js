@@ -1,29 +1,29 @@
 export const addToCartHelper = (cart, product) => {
-  const cartCopy = [...cart];
-  const existingItem = cartCopy.find((item) => item.id === product.id);
+  const updatedCart = [...cart];
+  const existingItem = updatedCart.find((item) => item._id === product._id);
 
   if (existingItem) {
     existingItem.quantity += 1;
   } else {
-    cartCopy.push({ ...product, quantity: 1 });
+    updatedCart.push({ ...product, quantity: 1 });
   }
 
-  localStorage.setItem("cartItems", JSON.stringify(cartCopy));
-  return cartCopy;
+  localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+  return updatedCart;
 };
 
-export const removeFromCartHelper = (cart, product) => {
-  const cartCopy = cart
+export const removeFromCartHelper = (cart, productId, fullRemove = false) => {
+  const updatedCart = cart
     .map((item) => {
-      if (item.id === product.id) {
+      if (item._id === productId) {
         return { ...item, quantity: item.quantity - 1 };
       }
       return item;
     })
-    .filter((item) => item.quantity > 0);
+    .filter((item) => item.quantity > 0 || fullRemove === false);
 
-  localStorage.setItem("cartItems", JSON.stringify(cartCopy));
-  return cartCopy;
+  localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+  return updatedCart;
 };
 
 export const clearCartHelper = () => {
