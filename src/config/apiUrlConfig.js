@@ -1,11 +1,11 @@
+/* eslint-disable no-unused-vars */
 const Development = {
-  user: "https://api.example.com",
+  product: "http://localhost:5000/api/v1/products",
 };
-export const baseUrl = Development;
+// export const baseUrl = Development;
 
-// eslint-disable-next-line no-unused-vars
 const Production = {
-  user: "https://api.example.com",
+  product: "https://gift-mate-server.onrender.com/api/v1/products",
 };
 
-// export const baseUrl = Production;
+export const baseUrl = Production;

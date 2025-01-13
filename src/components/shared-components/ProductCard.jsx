@@ -42,7 +42,8 @@ export default function ProductCard({ product }) {
       <div className="w-full flex justify-center items-center">
         <img
           className="h-[100px] w-[100px]"
-          src="/assets/images/iphone.png"
+          // src="/assets/images/iphone.png"
+          src={product?.image}
           alt={product.title}
         />
       </div>
