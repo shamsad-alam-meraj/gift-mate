@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { BsCartPlus } from "react-icons/bs";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "@/redux/reducers/cartSlice";
 import { Link } from "react-router-dom";
 import { MdOutlineShoppingBag } from "react-icons/md";
@@ -11,8 +11,9 @@ import { Rating } from "react-simple-star-rating";
 export default function ProductCard({ product }) {
   const cardRef = useRef(null);
   const dispatch = useDispatch();
-  console.log(product);
+  const cartItems = useSelector((state) => state.cart.items);
 
+  const isInCart = cartItems.find((item) => item._id === product._id);
   useEffect(() => {
     // GSAP animation to smoothly open the card
     gsap.from(cardRef.current, {
@@ -22,17 +23,17 @@ export default function ProductCard({ product }) {
       ease: "power3.out",
     });
     gsap.to(cardRef.current, {
-      opacity: 100,
+      opacity: 1,
       scale: 1,
       duration: 0.5,
       ease: "power3.out",
     });
   }, []);
 
-  // Truncate description to at most 10 characters with "..."
+  // Truncate description to at most 40 characters with "..."
   const truncatedDescription =
     product.description?.length > 40
-      ? `${product.description.slice(0, 40)}`
+      ? `${product.description.slice(0, 40)}...`
       : product.description;
 
   return (
@@ -50,9 +51,7 @@ export default function ProductCard({ product }) {
       </div>
       <h2 className="mt-2 font-semibold">{product.title}</h2>
       <div className="flex justify-between items-center py-1">
-        <p className="font-semibold text-yellow-400">
-          {/* {product?.pricing_currency?.native_symbol} */}$ {product.price}
-        </p>
+        <p className="font-semibold text-yellow-400">$ {product.price}</p>
         <span className="flex flex-row">
           <Rating
             className="flex flex-row"
@@ -73,16 +72,25 @@ export default function ProductCard({ product }) {
         </Link>
       </p>
       <div className="flex justify-between items-center pt-3">
+        {/* Add to Cart Button */}
         <button
-          onClick={() => dispatch(addToCart(product))}
-          className="bg-primary text-white font-bold py-2 px-2 rounded"
+          onClick={() => {
+            if (!isInCart) {
+              dispatch(addToCart(product));
+            }
+          }}
+          disabled={isInCart} // Disable button if product is in the cart
+          className={`font-bold py-2 px-2 rounded ${
+            isInCart
+              ? "bg-primary text-white border-primary cursor-not-allowed"
+              : "border border-primary text-primary"
+          }`}
         >
           <BsCartPlus />
         </button>
-        <button
-          // onClick={() => dispatch(addToCart(product))}
-          className="bg-yellow-400 text-white font-bold py-1 flex items-center px-2 rounded"
-        >
+
+        {/* Buy Now Button */}
+        <button className="border border-yellow-500 text-yellow-500 font-bold py-1 flex items-center px-2 rounded">
           <span className="mr-2 text-md">Buy Now</span> <MdOutlineShoppingBag />
         </button>
       </div>

@@ -32,15 +32,15 @@ export default function CartItemList() {
             </thead>
             <tbody>
               {cartItems.map((item) => (
-                <tr key={item.id} className="border-t">
+                <tr key={item._id} className="border-t">
                   <td className="p-4">{item.title}</td>
-                  <td className="p-4">${item.price.toFixed(2)}</td>
+                  <td className="p-4">${item?.price?.toFixed(2)}</td>
                   <td className="p-4">
                     <div className="flex items-center space-x-2">
                       {/* Decrease Quantity */}
                       <button
                         onClick={() =>
-                          dispatch(removeFromCart({ id: item.id }))
+                          dispatch(removeFromCart({ id: item._id }))
                         }
                         className="px-3 py-1 rounded shadow-md border text-red-500 font-bold"
                       >
@@ -49,7 +49,7 @@ export default function CartItemList() {
                       <span className="font-medium">{item.quantity}</span>
                       {/* Increase Quantity */}
                       <button
-                        onClick={() => dispatch(addToCart({ id: item.id }))}
+                        onClick={() => dispatch(addToCart({ id: item._id }))}
                         className="px-3 py-1 rounded shadow-md border text-green-500 font-bold"
                       >
                         +
@@ -63,7 +63,7 @@ export default function CartItemList() {
                     <button
                       onClick={() =>
                         dispatch(
-                          removeFromCart({ id: item.id, fullRemove: true })
+                          removeFromCart({ id: item._id, fullRemove: true })
                         )
                       }
                       className="px-3 py-1 rounded shadow-md border text-red-400 font-bold"
