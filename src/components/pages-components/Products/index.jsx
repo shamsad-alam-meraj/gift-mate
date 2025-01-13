@@ -18,7 +18,7 @@ export default function ProductsPage({ products, loading }) {
         <input
           type="text"
           placeholder="Search for gifts..."
-          className="w-full md:w-[400px] bg-transparent p-3 border border-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          className="w-full md:w-[400px] bg-transparent p-3 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
           value={searchQuery}
           onChange={handleSearch}
         />
@@ -27,7 +27,7 @@ export default function ProductsPage({ products, loading }) {
       {/* Main Content */}
       <div className="flex flex-col md:flex-row gap-6">
         {/* Sidebar */}
-        <aside className="w-full md:w-1/4 p-4 rounded-lg shadow-md shadow-yellow-50">
+        <aside className="w-full md:w-1/4 p-4 rounded-lg shadow-sm shadow-yellow-50">
           <h2 className="text-lg font-semibold pb-4">Filter Gifts</h2>
           <div className="space-y-6">
             {/* Budget Filter */}

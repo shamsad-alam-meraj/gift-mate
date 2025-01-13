@@ -36,7 +36,7 @@ export default function ProductCard({ product }) {
   return (
     <div
       ref={cardRef}
-      className="rounded-lg shadow-sm dark:shadow-yellow-50 shadow-yellow-400 p-4 bg-opacity-80 backdrop-blur-lg transition-all duration-300 ease-in-out"
+      className="rounded-lg shadow-sm dark:shadow-gray-50 shadow-gray-400 p-4 bg-opacity-80 backdrop-blur-lg transition-all duration-300 ease-in-out"
       key={product.id}
     >
       <div className="w-full flex justify-center items-center">
