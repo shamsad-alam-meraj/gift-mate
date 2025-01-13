@@ -5,11 +5,13 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/reducers/cartSlice";
 import { Link } from "react-router-dom";
 import { MdOutlineShoppingBag } from "react-icons/md";
+import { Rating } from "react-simple-star-rating";
 
 /* eslint-disable react/prop-types */
 export default function ProductCard({ product }) {
   const cardRef = useRef(null);
   const dispatch = useDispatch();
+  console.log(product);
 
   useEffect(() => {
     // GSAP animation to smoothly open the card
@@ -42,15 +44,25 @@ export default function ProductCard({ product }) {
       <div className="w-full flex justify-center items-center">
         <img
           className="h-[100px] w-[100px]"
-          // src="/assets/images/iphone.png"
           src={product?.image}
           alt={product.title}
         />
       </div>
       <h2 className="mt-2 font-semibold">{product.title}</h2>
-      <p className="font-semibold text-yellow-400">
-        {product?.pricing_currency?.native_symbol} {product.price}
-      </p>
+      <div className="flex justify-between items-center py-1">
+        <p className="font-semibold text-yellow-400">
+          {/* {product?.pricing_currency?.native_symbol} */}$ {product.price}
+        </p>
+        <span className="flex flex-row">
+          <Rating
+            className="flex flex-row"
+            readonly
+            transition={true}
+            size={12}
+            initialValue={product?.ratings}
+          />
+        </span>
+      </div>
       <p className="text-sm">
         {truncatedDescription}
         <Link
@@ -71,7 +83,7 @@ export default function ProductCard({ product }) {
           // onClick={() => dispatch(addToCart(product))}
           className="bg-yellow-400 text-white font-bold py-1 flex items-center px-2 rounded"
         >
-         <span className="mr-2 text-md">Buy Now</span> <MdOutlineShoppingBag />
+          <span className="mr-2 text-md">Buy Now</span> <MdOutlineShoppingBag />
         </button>
       </div>
     </div>
