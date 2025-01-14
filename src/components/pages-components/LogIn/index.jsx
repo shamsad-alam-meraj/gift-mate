@@ -65,13 +65,11 @@ const LogIn = () => {
 
   return (
     <div
-      style={{
-        height:
-          activeTab === authBlock_index.LOGIN_BLOCK
-            ? "calc(100vh - 64px)"
-            : "100vh",
-      }}
-      className="flex justify-center items-center"
+      className={`flex justify-center items-center ${
+        activeTab === authBlock_index.LOGIN_BLOCK
+          ? "show_middle_with_navbar"
+          : "min-h-screen"
+      }`}
     >
       <div className="w-full max-w-md border border-secondary shadow-lg rounded-xl p-6">
         {/* Tabs */}

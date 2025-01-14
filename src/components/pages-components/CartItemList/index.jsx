@@ -42,7 +42,7 @@ export default function CartItemList() {
           </div>
         </>
       ) : (
-        <div className="min-h-screen flex justify-center items-center">
+        <div className="flex justify-center items-center show_middle_with_navbar">
           <p className="text-center text-yellow-500 font-semibold italic">
             Your cart is empty.
           </p>

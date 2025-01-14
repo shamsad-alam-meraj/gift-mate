@@ -4,13 +4,12 @@
 
 body {
   font-family: "Delius", serif;
-  // background: url("../../public/assets/images/website_bg.png") no-repeat center center fixed;
-  // background-size: cover;
-  // background-blend-mode: darken;
-
   .container {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .show_middle_with_navbar {
+    height: calc(100vh - 64px);
   }
 }
 /* Style for the entire scrollbar */
