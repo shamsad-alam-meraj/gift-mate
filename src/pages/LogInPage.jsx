@@ -1,12 +1,11 @@
+import NavbarFooterWrapper from "@/components/HOC/NavbarFooterWrapper";
 import LogIn from "@/components/pages-components/LogIn";
-import Navbar from "@/components/shared-components/Navbar";
 
 const LogInPage = () => {
   return (
-    <>
-      <Navbar />
+    <NavbarFooterWrapper>
       <LogIn />
-    </>
+    </NavbarFooterWrapper>
   );
 };
 

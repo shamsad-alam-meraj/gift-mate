@@ -1,6 +1,5 @@
+import NavbarFooterWrapper from "@/components/HOC/NavbarFooterWrapper";
 import Products from "@/components/pages-components/Products";
-import Footer from "@/components/shared-components/Footer";
-import Navbar from "@/components/shared-components/Navbar";
 import { setProducts } from "@/redux/reducers/productSlice";
 import Product from "@/services/Product";
 import { useEffect, useState } from "react";
@@ -24,11 +23,9 @@ const ProductsPage = () => {
     getProductList();
   }, [dispatch]);
   return (
-    <>
-      <Navbar />
+    <NavbarFooterWrapper>
       <Products products={products} loading={loading} />
-      <Footer />
-    </>
+    </NavbarFooterWrapper>
   );
 };
 
