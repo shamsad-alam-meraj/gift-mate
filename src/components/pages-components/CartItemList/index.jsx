@@ -1,5 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, removeFromCart, clearCart } from "@/redux/reducers/cartSlice";
+import {
+  addToCart,
+  removeFromCart,
+  clearCart,
+} from "@/redux/reducers/cartSlice";
+import CartItems from "./CartItems";
 
 export default function CartItemList() {
   const dispatch = useDispatch();
@@ -14,57 +19,11 @@ export default function CartItemList() {
 
       {cartItems.length > 0 ? (
         <>
-          <table className="w-full text-left border-collapse border border-gray-200">
-            <thead>
-              <tr className="bg-inherit">
-                <th className="p-4 border border-gray-200">Item</th>
-                <th className="p-4 border border-gray-200">Price</th>
-                <th className="p-4 border border-gray-200">Quantity</th>
-                <th className="p-4 border border-gray-200">Total</th>
-                <th className="p-4 border border-gray-200">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cartItems.map((item) => (
-                <tr key={item._id}>
-                  <td className="p-4">{item.title}</td>
-                  <td className="p-4">${item.price.toFixed(2)}</td>
-                  <td className="p-4">
-                    <div className="flex items-center space-x-2">
-                      <button
-                        onClick={() =>
-                          dispatch(
-                            removeFromCart({ _id: item._id, fullRemove: false })
-                          )
-                        }
-                        className="px-3 py-1 rounded shadow-md border text-red-500 font-bold"
-                      >
-                        -
-                      </button>
-                      <span className="font-medium">{item.quantity}</span>
-                      <button
-                        onClick={() => dispatch(addToCart(item))}
-                        className="px-3 py-1 rounded shadow-md border text-green-500 font-bold"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </td>
-                  <td className="p-4">${(item.price * item.quantity).toFixed(2)}</td>
-                  <td className="p-4">
-                    <button
-                      onClick={() =>
-                        dispatch(removeFromCart({ _id: item._id, fullRemove: true }))
-                      }
-                      className="px-3 py-1 rounded shadow-md border text-red-400 font-bold"
-                    >
-                      x
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <CartItems
+            cartItems={cartItems}
+            removeFromCart={removeFromCart}
+            addToCart={addToCart}
+          />
           <div className="flex justify-between items-center mt-6">
             <button
               onClick={() => dispatch(clearCart())}
