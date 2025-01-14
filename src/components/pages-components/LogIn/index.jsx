@@ -73,7 +73,7 @@ const LogIn = () => {
       }}
       className="flex justify-center items-center"
     >
-      <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-6">
+      <div className="w-full max-w-md border border-secondary shadow-lg rounded-xl p-6">
         {/* Tabs */}
         <Tabs
           activeTab={activeTab}

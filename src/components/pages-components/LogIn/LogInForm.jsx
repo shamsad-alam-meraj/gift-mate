@@ -14,7 +14,7 @@ const LogInForm = ({ formData, handleChange, errors, handleSubmit }) => {
           placeholder="Enter your email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full mt-1 p-2 border rounded"
+          className="w-full mt-1 p-2 border rounded bg-transparent"
         />
       </div>
       <div className="mb-2">
@@ -27,11 +27,13 @@ const LogInForm = ({ formData, handleChange, errors, handleSubmit }) => {
           placeholder="Enter your password"
           value={formData.password}
           onChange={handleChange}
-          className="w-full mt-1 p-2 border rounded"
+          className="w-full mt-1 p-2 border rounded bg-transparent"
         />
       </div>
       <div className="flex justify-between items-center mb-4">
-        <button className="text-blue-500 text-sm">Forgot Password?</button>
+        <button className="text-sm text-primary hover:text-primary-500 font-semibold">
+          Forgot Password?
+        </button>
       </div>
       <div className="mb-4 text-red-500 text-sm">
         {/* Show only the first error */}
@@ -39,7 +41,7 @@ const LogInForm = ({ formData, handleChange, errors, handleSubmit }) => {
       </div>
       <button
         onClick={handleSubmit}
-        className="w-full bg-primary text-white py-2 rounded mb-2"
+        className="w-full py-2 rounded mb-2 border text-sm bg-primary text-white font-semibold"
       >
         Log In
       </button>

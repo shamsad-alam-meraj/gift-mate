@@ -14,7 +14,7 @@ const SignUpForm = ({ formData, handleChange, errors, handleSubmit }) => {
           placeholder="Enter your name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full mt-1 p-2 border rounded"
+          className="w-full mt-1 p-2 border rounded bg-transparent"
         />
       </div>
       <div className="mb-2">
@@ -27,7 +27,7 @@ const SignUpForm = ({ formData, handleChange, errors, handleSubmit }) => {
           placeholder="Enter your email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full mt-1 p-2 border rounded"
+          className="w-full mt-1 p-2 border rounded bg-transparent"
         />
       </div>
       <div className="mb-2">
@@ -40,7 +40,7 @@ const SignUpForm = ({ formData, handleChange, errors, handleSubmit }) => {
           placeholder="Enter your password"
           value={formData.password}
           onChange={handleChange}
-          className="w-full mt-1 p-2 border rounded"
+          className="w-full mt-1 p-2 border rounded bg-transparent"
         />
       </div>
       <div className="mb-2">
@@ -53,7 +53,7 @@ const SignUpForm = ({ formData, handleChange, errors, handleSubmit }) => {
           placeholder="Retype your password"
           value={formData.retypePassword}
           onChange={handleChange}
-          className="w-full mt-1 p-2 border rounded"
+          className="w-full mt-1 p-2 border rounded bg-transparent"
         />
       </div>
       <div className="mb-4 text-red-500 text-sm">
@@ -62,7 +62,7 @@ const SignUpForm = ({ formData, handleChange, errors, handleSubmit }) => {
       </div>
       <button
         onClick={handleSubmit}
-        className="w-full bg-primary text-white py-2 rounded mb-2"
+        className="w-full py-2 rounded mb-2 text-white font-semibold border bg-primary"
       >
         Sign Up
       </button>
