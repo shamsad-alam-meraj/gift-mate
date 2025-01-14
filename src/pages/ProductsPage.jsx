@@ -1,4 +1,5 @@
 import Products from "@/components/pages-components/Products";
+import Footer from "@/components/shared-components/Footer";
 import Navbar from "@/components/shared-components/Navbar";
 import { setProducts } from "@/redux/reducers/productSlice";
 import Product from "@/services/Product";
@@ -11,7 +12,7 @@ const ProductsPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     const getProductList = async () => {
-      const response = await Product.getProducts(1,20);
+      const response = await Product.getProducts(1, 20);
       if (response.status === 200) {
         dispatch(setProducts(response.data.data));
         setLoading(false);
@@ -26,6 +27,7 @@ const ProductsPage = () => {
     <>
       <Navbar />
       <Products products={products} loading={loading} />
+      <Footer />
     </>
   );
 };
