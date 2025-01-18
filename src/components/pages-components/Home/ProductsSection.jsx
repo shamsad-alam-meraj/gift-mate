@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function ProductsSection({ loading, products }) {
-  console.log(products);
   return (
     <div className="pt-10 container">
       <div className="flex w-full justify-between items-center py-3">
