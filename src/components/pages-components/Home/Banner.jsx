@@ -38,7 +38,7 @@ export default function Banner() {
           ref={(el) => (textRef.current[0] = el)}
           className="text-3xl sm:text-4xl font-semibold pb-2 italic"
         >
-          <span className="text-yellow-400">gift</span>
+          <span className="text-secondary">gift</span>
           <span className="text-primary">mate</span>
         </h1>
         <p

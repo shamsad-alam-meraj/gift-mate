@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const LeftSideBar = () => {
   return (
-    <aside className="w-full md:w-1/4 p-4 rounded-lg shadow-sm shadow-yellow-50">
+    <aside className="w-full md:w-1/4 p-4 rounded-lg shadow-sm">
       <h2 className="text-lg font-semibold pb-4">Filter Gifts</h2>
       <div className="space-y-6">
         {/* Budget Filter */}

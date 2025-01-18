@@ -12,7 +12,7 @@ const PrimaryButton = ({
       style={{
         height,
         width,
-        backgroundColor: "#3498db",
+        backgroundColor: "#4635B1",
         color: "white",
         border: "none",
         borderRadius: "5px",

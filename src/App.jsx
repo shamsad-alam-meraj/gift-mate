@@ -45,10 +45,10 @@ function App() {
         outerAlpha={0}
         hasBlendMode={true}
         innerStyle={{
-          backgroundColor: "#FFFF00",
+          backgroundColor: "#B771E5",
         }}
         outerStyle={{
-          border: "2px solid #3498db",
+          border: "2px solid #4635B1",
         }}
       />
       <AppRoutes />

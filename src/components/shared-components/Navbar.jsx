@@ -48,7 +48,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="text-2xl font-bold">
               {/* <img className="h-10" src="/assets/images/full_logo.png" alt="" /> */}
-              <span className="text-yellow-400">gift</span>
+              <span className="text-secondary">gift</span>
               <span className="text-primary">mate</span>
             </Link>
           </div>
@@ -100,7 +100,7 @@ const Navbar = () => {
                 {isOpen ? (
                   <MdOutlineClose color="#ffbf00" size={24} />
                 ) : (
-                  <FiMenu color="#3498db" size={24} />
+                  <FiMenu color="#4635B1" size={24} />
                 )}
               </svg>
             </button>

@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Company Info */}
         <div className="space-y-4">
           <h3 className="text-xl font-semibold">
-            <span className="text-yellow-400">gift</span>
+            <span className="text-secondary">gift</span>
             <span className="text-primary">mate</span>
           </h3>
           <p className="text-sm text-gray-400">
@@ -29,22 +29,22 @@ export default function Footer() {
           <h4 className="text-lg font-semibold">Quick Links</h4>
           <ul className="space-y-2">
             <li>
-              <a href="#about" className="hover:text-yellow-400 transition">
+              <a href="#about" className="hover:text-secondary transition">
                 About Us
               </a>
             </li>
             <li>
-              <a href="#shop" className="hover:text-yellow-400 transition">
+              <a href="#shop" className="hover:text-secondary transition">
                 Shop
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-yellow-400 transition">
+              <a href="#contact" className="hover:text-secondary transition">
                 Contact Us
               </a>
             </li>
             <li>
-              <a href="#faq" className="hover:text-yellow-400 transition">
+              <a href="#faq" className="hover:text-secondary transition">
                 FAQ
               </a>
             </li>
@@ -59,7 +59,7 @@ export default function Footer() {
               href="https://facebook.com"
               target="_blank"
               rel="noreferrer"
-              className="p-2 rounded-full bg-gray-700 hover:bg-yellow-400 transition"
+              className="p-2 rounded-full bg-gray-700 hover:bg-secondary transition"
             >
               <FaFacebookF />
             </a>
@@ -67,7 +67,7 @@ export default function Footer() {
               href="https://twitter.com"
               target="_blank"
               rel="noreferrer"
-              className="p-2 rounded-full bg-gray-700 hover:bg-yellow-400 transition"
+              className="p-2 rounded-full bg-gray-700 hover:bg-secondary transition"
             >
               <FaTwitter />
             </a>
@@ -75,7 +75,7 @@ export default function Footer() {
               href="https://instagram.com"
               target="_blank"
               rel="noreferrer"
-              className="p-2 rounded-full bg-gray-700 hover:bg-yellow-400 transition"
+              className="p-2 rounded-full bg-gray-700 hover:bg-secondary transition"
             >
               <FaInstagram />
             </a>
@@ -83,7 +83,7 @@ export default function Footer() {
               href="https://linkedin.com"
               target="_blank"
               rel="noreferrer"
-              className="p-2 rounded-full bg-gray-700 hover:bg-yellow-400 transition"
+              className="p-2 rounded-full bg-gray-700 hover:bg-secondary transition"
             >
               <FaLinkedinIn />
             </a>
@@ -94,11 +94,11 @@ export default function Footer() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="p-2 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="p-2 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary"
             />
             <button
               type="submit"
-              className="px-4 py-2 bg-yellow-400 text-gray-800 font-bold rounded-md hover:bg-yellow-500 transition"
+              className="px-4 py-2 bg-secondary text-gray-800 font-bold rounded-md hover:bg-secondary transition"
             >
               Subscribe
             </button>

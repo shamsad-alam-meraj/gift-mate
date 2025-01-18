@@ -20,23 +20,23 @@ body {
 
 /* Style for the track (background of the scrollbar) */
 ::-webkit-scrollbar-track {
-  background: #ffff00;
+  background: #b771e5;
 }
 
 /* Style for the thumb (the draggable part of the scrollbar) */
 ::-webkit-scrollbar-thumb {
-  background: #3498db;
+  background: #4635B1;
   transition: background-color 0.3s ease;
 }
 
 /* Hover effect for the thumb when hovered */
 ::-webkit-scrollbar-thumb:hover {
-  background: #2980b9;
+  background: #4635B1;
 }
 
 /* Optional: Style for the corner where horizontal and vertical scrollbars meet */
 ::-webkit-scrollbar-corner {
-  background: #ffff00;
+  background: #b771e5;
 }
 // Style for Rating Stars of Product Card
 .style-module_emptyIcons__Bg-FZ {

@@ -51,7 +51,7 @@ export default function ProductCard({ product }) {
       </div>
       <h2 className="mt-2 font-semibold">{product.title}</h2>
       <div className="flex justify-between items-center py-1">
-        <p className="font-semibold text-yellow-400">$ {product.price}</p>
+        <p className="font-semibold text-secondary">$ {product.price}</p>
         <span className="flex flex-row">
           <Rating
             className="flex flex-row"
@@ -90,7 +90,7 @@ export default function ProductCard({ product }) {
         </button>
 
         {/* Buy Now Button */}
-        <button className="border border-yellow-500 text-yellow-500 font-bold py-1 flex items-center px-2 rounded">
+        <button className="border border-secondary text-secondary font-bold py-1 flex items-center px-2 rounded">
           <span className="mr-2 text-md">Buy Now</span> <MdOutlineShoppingBag />
         </button>
       </div>
