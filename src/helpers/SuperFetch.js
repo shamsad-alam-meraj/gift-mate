@@ -8,6 +8,7 @@ const SuperFetch = async (url, method = "GET", data = null, headers = {}) => {
     // Default headers
     const defaultHeaders = {
       "Content-Type": "application/json",
+      Accept: "application/json",
       Authorization: token ? `Bearer ${token}` : undefined, // Include token if available
     };
 

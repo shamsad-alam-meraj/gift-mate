@@ -9,6 +9,10 @@ const Product = {
     ),
   getProductBySearch: async (query = "") =>
     await SuperFetch(`${baseUrl.product}?search=${query}`),
+  getProductByFilter: async (filters = {}, page = 1, limit = 20) =>
+    await SuperFetch(
+      `${baseUrl.product}/filter?filters=${filters}&page=${page}&limit=${limit}`
+    ),
 };
 
 export default Product;

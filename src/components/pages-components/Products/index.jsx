@@ -10,6 +10,9 @@ export default function ProductsPage({
   setSearchQuery,
   searchQuery,
   handleSearch,
+  getProductsByFilter,
+  setFilters,
+  filters,
 }) {
   return (
     <div className="container mx-auto py-8">
@@ -26,7 +29,11 @@ export default function ProductsPage({
       {/* Main Content */}
       <div className="flex flex-col md:flex-row gap-6 ">
         {/*Left Sidebar */}
-        <LeftSideBar />
+        <LeftSideBar
+          getProductsByFilter={getProductsByFilter}
+          setFilters={setFilters}
+          filters={filters}
+        />
 
         {/* Products Grid */}
         {loading ? (
@@ -46,4 +53,7 @@ ProductsPage.propTypes = {
   searchQuery: PropTypes.string.isRequired,
   setSearchQuery: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
+  getProductsByFilter: PropTypes.func.isRequired,
+  setFilters: PropTypes.func.isRequired,
+  filters: PropTypes.object.isRequired,
 };

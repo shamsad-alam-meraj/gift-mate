@@ -11,6 +11,7 @@ const ProductsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
+  const [filters, setFilters] = useState({});
   const products = useSelector((state) => state?.product.products);
   const dispatch = useDispatch();
 
@@ -33,6 +34,29 @@ const ProductsPage = () => {
     getProductList(currentPage);
   }, [currentPage]);
 
+  const getProductsByFilter = async () => {
+    try {
+      // If search query is set, add it to the filters
+      if (searchQuery) {
+        setFilters({ ...filters, search: searchQuery });
+      }
+
+      // Send the filters object as part of the request body or URL
+      const response = await Product.getProductByFilter(
+        JSON.stringify(filters)
+      );
+
+      if (response.status === 200) {
+        setCurrentPage(response.data.page);
+        dispatch(setProducts(response.data.data));
+      } else {
+        console.error("Failed to fetch products.");
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const handleSearch = async (query) => {
     try {
       let response = await Product.getProductBySearch(query);
@@ -54,6 +78,9 @@ const ProductsPage = () => {
         setSearchQuery={setSearchQuery}
         searchQuery={searchQuery}
         handleSearch={handleSearch}
+        getProductsByFilter={getProductsByFilter}
+        setFilters={setFilters}
+        filters={filters}
       />
       <ProductsPagination
         currentPage={currentPage}
