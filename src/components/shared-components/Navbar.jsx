@@ -58,8 +58,8 @@ const Navbar = () => {
             <Link to="/" className="hover:text-primary font-bold">
               Home
             </Link>
-            <Link to="/products" className="hover:text-primary font-bold">
-              Products
+            <Link to="/gifts" className="hover:text-primary font-bold">
+              Gifts
             </Link>
             <Link to="/chat-bot" className="hover:text-primary font-bold">
               Chatbot
@@ -127,18 +127,18 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            to="/products"
+            to="/gifts"
             className="block text-white hover:bg-gray-600 rounded px-3 py-2"
             onClick={() => setIsOpen(false)}
           >
-            Products
+            Gifts
           </Link>
           <Link
-            to="/services"
+            to="/chat-bot"
             className="block text-white hover:bg-gray-600 rounded px-3 py-2"
             onClick={() => setIsOpen(false)}
           >
-            Services
+            Chatbot
           </Link>
           <Link
             to="/about-us"
