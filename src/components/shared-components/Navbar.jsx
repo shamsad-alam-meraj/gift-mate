@@ -1,16 +1,27 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 import ThemeToggle from "./ThemeToggle";
 import { FiMenu } from "react-icons/fi";
 import { MdOutlineClose } from "react-icons/md";
 import { BsCart2 } from "react-icons/bs";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import auth from "../../../firebase.init.js";
+import { signOut } from "firebase/auth";
+import { logout } from "@/redux/reducers/userSlice";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const logOut = () => {
+    signOut(auth);
+    localStorage.removeItem("accessToken");
+    dispatch(logout());
+    navigate("/");
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -79,7 +90,10 @@ const Navbar = () => {
               <BsCart2 />
             </Link>
             {isLoggedIn ? (
-              <button className="pb-1 hidden md:inline-block hover:text-primary font-bold ml-4">
+              <button
+                onClick={() => logOut()}
+                className="pb-1 hidden md:inline-block hover:text-primary font-bold ml-4"
+              >
                 Log Out
               </button>
             ) : (
@@ -157,7 +171,10 @@ const Navbar = () => {
           </Link>
           <div className="flex justify-between items-center">
             {isLoggedIn ? (
-              <button className="block text-white hover:bg-gray-600 rounded px-3 py-2">
+              <button
+                onClick={() => logOut()}
+                className="block text-white hover:bg-gray-600 rounded px-3 py-2"
+              >
                 Log Out
               </button>
             ) : (

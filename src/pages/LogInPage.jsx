@@ -46,6 +46,7 @@ const LogInPage = () => {
         uError={uError}
         updating={updating}
         updateError={updateError}
+        onSubmit={onSubmit}
       />
     </NavbarFooterWrapper>
   );
