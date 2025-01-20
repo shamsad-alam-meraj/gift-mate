@@ -5,8 +5,9 @@ import { gsap } from "gsap";
 import LogInForm from "./LogInForm";
 import SignUpForm from "./SignUpForm";
 import Tabs from "./Tabs";
+import PropTypes from "prop-types";
 
-const LogIn = () => {
+const LogIn = ({signInWithGoogle}) => {
   const [activeTab, setActiveTab] = useState(authBlock_index.LOGIN_BLOCK);
   const [formData, setFormData] = useState({
     email: "",
@@ -86,6 +87,7 @@ const LogIn = () => {
               handleChange={handleChange}
               errors={errors}
               handleSubmit={handleSubmit}
+              signInWithGoogle={signInWithGoogle}
             />
           )}
 
@@ -95,6 +97,7 @@ const LogIn = () => {
               handleChange={handleChange}
               errors={errors}
               handleSubmit={handleSubmit}
+              signInWithGoogle={signInWithGoogle}
             />
           )}
         </div>
@@ -104,3 +107,6 @@ const LogIn = () => {
 };
 
 export default LogIn;
+LogIn.propTypes = {
+  signInWithGoogle: PropTypes.func.isRequired, // Function to sign in with Google
+};

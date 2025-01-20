@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import SignInWithGoogleBtn from "./SignInWithGoogleBtn";
 
-const LogInForm = ({ formData, handleChange, errors, handleSubmit }) => {
+const LogInForm = ({ formData, handleChange, errors, handleSubmit,signInWithGoogle }) => {
   return (
     <div>
       <div className="mb-2">
@@ -45,7 +45,7 @@ const LogInForm = ({ formData, handleChange, errors, handleSubmit }) => {
       >
         Log In
       </button>
-      <SignInWithGoogleBtn />
+      <SignInWithGoogleBtn signInWithGoogle={signInWithGoogle}/>
     </div>
   );
 };
@@ -58,6 +58,7 @@ LogInForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
   errors: PropTypes.objectOf(PropTypes.string),
   handleSubmit: PropTypes.func.isRequired,
+  signInWithGoogle: PropTypes.func.isRequired,
 };
 
 export default LogInForm;
