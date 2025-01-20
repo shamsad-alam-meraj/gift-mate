@@ -5,10 +5,12 @@ import ThemeToggle from "./ThemeToggle";
 import { FiMenu } from "react-icons/fi";
 import { MdOutlineClose } from "react-icons/md";
 import { BsCart2 } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -76,12 +78,18 @@ const Navbar = () => {
             >
               <BsCart2 />
             </Link>
-            <Link
-              to="/log-in"
-              className="pb-1 hidden md:inline-block hover:text-primary font-bold ml-4"
-            >
-              Log In
-            </Link>
+            {isLoggedIn ? (
+              <button className="pb-1 hidden md:inline-block hover:text-primary font-bold ml-4">
+                Log Out
+              </button>
+            ) : (
+              <Link
+                to="/log-in"
+                className="pb-1 hidden md:inline-block hover:text-primary font-bold ml-4"
+              >
+                Log In
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -148,13 +156,19 @@ const Navbar = () => {
             About Us
           </Link>
           <div className="flex justify-between items-center">
-            <Link
-              to="/log-in"
-              className="block text-white hover:bg-gray-600 rounded px-3 py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              Log In
-            </Link>
+            {isLoggedIn ? (
+              <button className="block text-white hover:bg-gray-600 rounded px-3 py-2">
+                Log Out
+              </button>
+            ) : (
+              <Link
+                to="/log-in"
+                className="block text-white hover:bg-gray-600 rounded px-3 py-2"
+                onClick={() => setIsOpen(false)}
+              >
+                Log In
+              </Link>
+            )}
             <Link
               to="/cart-items"
               className="block text-white hover:bg-gray-600 rounded px-3 py-2"
