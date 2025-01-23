@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import BlockLoader from "@/components/shared-components/BlockLoader";
-import ProductCard from "@/components/shared-components/ProductCard";
+import ProductHotCard from "@/components/shared-components/ProductHotCard";
 import SectionHeader from "@/components/shared-components/SectionHeader";
 
 const HotDealsSection = ({ products, loading }) => {
@@ -14,7 +14,7 @@ const HotDealsSection = ({ products, loading }) => {
       ) : (
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mt-5">
           {products?.map((product) => (
-            <ProductCard key={product?._id} product={product} />
+            <ProductHotCard key={product?._id} product={product} />
           ))}
         </div>
       )}
