@@ -7,7 +7,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#3d3d3d] text-gray-200 py-10 mt-10">
+    <footer className="bg-[#00004d] text-gray-200 py-10 mt-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Company Info */}
         <div className="space-y-4">
