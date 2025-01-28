@@ -8,7 +8,7 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 import { Rating } from "react-simple-star-rating";
 
 /* eslint-disable react/prop-types */
-export default function ProductHotCard({ product }) {
+export default function ProductHotCard({ product, type }) {
   const cardRef = useRef(null);
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
@@ -44,17 +44,17 @@ export default function ProductHotCard({ product }) {
       key={product.id}
     >
       {/* Offer Stamps */}
-      {product.offer?.buy1get1 && (
-        <div className="absolute top-0 left-0 bg-green-800 text-xs font-semibold px-2 py-1 rounded-br-lg rounded-tl-lg shadow text-white">
+      {type === "b1g1" && (
+        <div className="absolute top-0 right-0 bg-green-800 text-xs font-semibold px-2 py-1 rounded-tr-lg rounded-bl-lg shadow text-white">
           Buy 1 Get 1
         </div>
       )}
-      {product.offer?.free_delivery && (
-        <div className="absolute top-0 right-[50%] bg-primary text-xs font-semibold px-2 py-1 shadow-md rounded-tl-md text-white">
-          Free Delivery
+      {type === "freeShipping" && (
+        <div className="absolute top-0 right-0 bg-primary text-xs font-semibold px-2 py-1 shadow-md rounded-tr-lg rounded-bl-lg text-white">
+          Free Shipping
         </div>
       )}
-      {product.offer?.percentage && (
+      {type === "offer" && (
         <div className="absolute top-0 right-0 bg-red-800 text-xs font-semibold px-2 py-1 rounded-tr-lg rounded-bl-lg shadow-md text-white">
           {product.offer.percentage}% Off
         </div>
@@ -67,9 +67,7 @@ export default function ProductHotCard({ product }) {
           alt={product.title}
         />
       </div>
-      <h2 className="mt-2 font-semibold text-lg">
-        {product.title}
-      </h2>
+      <h2 className="mt-2 font-semibold text-lg">{product.title}</h2>
       <div className="flex justify-between items-center py-1">
         <p className="font-semibold text-secondary">
           {product?.offer?.percentage ? (
@@ -79,7 +77,8 @@ export default function ProductHotCard({ product }) {
           ) : null}
           {product?.offer?.percentage
             ? `${product.currency.native_symbol} ${
-                product.price - product.price * (product?.offer?.percentage / 100)
+                product.price -
+                product.price * (product?.offer?.percentage / 100)
               }`
             : `${product.currency.native_symbol} ${product.price}`}
         </p>
